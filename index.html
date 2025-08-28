@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Professional blogging website for earning money online">
-    <title>ProBlog - Expert Blogging Platform</title>
+    <meta name="description" content="Muhammad Talha's Professional Blog - Online earning, courses and expert tips">
+    <title>Muhammad Talha - Expert Blogger</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #4361ee;
-            --secondary: #3f37c9;
-            --accent: #4cc9f0;
+            --primary: #6c5ce7;
+            --secondary: #a29bfe;
+            --accent: #fd79a8;
             --light: #f8f9fa;
-            --dark: #212529;
-            --gray: #6c757d;
-            --success: #4caf50;
-            --danger: #f44336;
+            --dark: #2d3436;
+            --gray: #636e72;
+            --success: #00b894;
+            --danger: #d63031;
         }
         
         * {
@@ -132,7 +132,7 @@
         
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%236c5ce7"/><text x="50" y="50" font-family="Arial" font-size="14" fill="white" text-anchor="middle" dominant-baseline="middle">Muhammad Talha</text></svg>');
             background-size: cover;
             background-position: center;
             color: white;
@@ -170,6 +170,84 @@
             background-color: var(--secondary);
             transform: translateY(-3px);
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        /* Search Section */
+        .search-section {
+            padding: 40px 0;
+            background-color: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .search-container {
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 15px 50px 15px 20px;
+            border: 2px solid var(--light);
+            border-radius: 30px;
+            font-size: 16px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+        
+        .search-input:focus {
+            border-color: var(--primary);
+        }
+        
+        .search-btn {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .search-btn:hover {
+            background-color: var(--secondary);
+        }
+        
+        .search-suggestions {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-top: 10px;
+            display: none;
+            z-index: 10;
+        }
+        
+        .search-suggestions.active {
+            display: block;
+        }
+        
+        .suggestion-item {
+            padding: 12px 20px;
+            border-bottom: 1px solid var(--light);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .suggestion-item:hover {
+            background-color: var(--light);
+        }
+        
+        .suggestion-item:last-child {
+            border-bottom: none;
         }
         
         /* Blog Section */
@@ -226,10 +304,15 @@
             box-shadow: 0 15px 30px rgba(0,0,0,0.1);
         }
         
-        .blog-post img {
+        .blog-post .post-image {
             width: 100%;
             height: 200px;
-            object-fit: cover;
+            background-color: var(--light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            color: var(--primary);
         }
         
         .blog-content {
@@ -275,6 +358,169 @@
         
         .read-more:hover i {
             transform: translateX(5px);
+        }
+        
+        /* Course Section */
+        .course-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .courses {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .course-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border: 1px solid var(--light);
+        }
+        
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .course-image {
+            height: 180px;
+            background-color: var(--light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            color: var(--primary);
+        }
+        
+        .course-content {
+            padding: 20px;
+        }
+        
+        .course-title {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .course-description {
+            margin-bottom: 20px;
+            color: var(--gray);
+        }
+        
+        .course-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+        
+        .course-btn:hover {
+            background-color: var(--secondary);
+        }
+        
+        /* Course Guidelines Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal.active {
+            display: flex;
+        }
+        
+        .modal-content {
+            background-color: white;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+        }
+        
+        .modal-header {
+            padding: 20px;
+            border-bottom: 1px solid var(--light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .modal-title {
+            font-size: 24px;
+            color: var(--dark);
+        }
+        
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--gray);
+        }
+        
+        .modal-body {
+            padding: 20px;
+        }
+        
+        .guidelines {
+            margin-bottom: 20px;
+        }
+        
+        .guidelines h3 {
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .guidelines ul {
+            padding-left: 20px;
+        }
+        
+        .guidelines li {
+            margin-bottom: 10px;
+            color: var(--gray);
+        }
+        
+        /* Contact Info */
+        .contact-info {
+            display: none;
+            background-color: var(--primary);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .contact-info.active {
+            display: block;
+        }
+        
+        .contact-info h3 {
+            margin-bottom: 10px;
+        }
+        
+        .contact-info p {
+            font-size: 18px;
+            font-weight: 600;
         }
         
         /* Sidebar */
@@ -470,6 +716,10 @@
                 grid-template-columns: 1fr;
             }
             
+            .courses {
+                grid-template-columns: 1fr;
+            }
+            
             .footer-content {
                 grid-template-columns: 1fr;
             }
@@ -482,8 +732,8 @@
         <div class="header-top">
             <div class="container">
                 <div class="contact-info">
-                    <span><i class="fas fa-phone"></i> +92 300 1234567</span>
-                    <span><i class="fas fa-envelope"></i> info@problog.com</span>
+                    <span><i class="fas fa-phone"></i> +92 313 6590350</span>
+                    <span><i class="fas fa-envelope"></i> muhammadtalha@example.com</span>
                 </div>
                 <div class="social-links">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -496,14 +746,14 @@
         <div class="main-header">
             <div class="container">
                 <a href="#" class="logo">
-                    <i class="fas fa-blog"></i> ProBlog
+                    <i class="fas fa-blog"></i> Muhammad Talha
                 </a>
                 <nav>
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Categories</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="#" id="contact-link">Contact</a></li>
+                        <li><a href="#courses">Courses</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#about">About</a></li>
                     </ul>
                 </nav>
             </div>
@@ -513,30 +763,95 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1>Professional Blogging Platform</h1>
-            <p>Discover expert tips, tutorials and insights to grow your online presence and earn money from your blog</p>
-            <a href="#" class="btn">Start Reading</a>
+            <h1>Welcome to Muhammad Talha's Blog</h1>
+            <p>Expert tips, tutorials and insights to grow your online presence and earn money from your blog</p>
+            <a href="#courses" class="btn">Explore Courses</a>
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="search-section">
+        <div class="container">
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Search for articles, courses, topics...">
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+                <div class="search-suggestions">
+                    <div class="suggestion-item">Blogging Tips for Beginners</div>
+                    <div class="suggestion-item">How to Earn Money Online</div>
+                    <div class="suggestion-item">Google AdSense Guide</div>
+                    <div class="suggestion-item">Affiliate Marketing Strategies</div>
+                    <div class="suggestion-item">SEO Optimization Techniques</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Section -->
+    <section class="course-section" id="courses">
+        <div class="container">
+            <div class="section-title">
+                <h2>Popular Courses by Muhammad Talha</h2>
+            </div>
+            <div class="courses">
+                <!-- Course 1 -->
+                <div class="course-card">
+                    <div class="course-image">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">Complete Blogging Course</h3>
+                        <p class="course-description">Learn how to create a successful blog from scratch and monetize it effectively.</p>
+                        <button class="course-btn" data-course="blogging">View Guidelines</button>
+                    </div>
+                </div>
+                
+                <!-- Course 2 -->
+                <div class="course-card">
+                    <div class="course-image">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">Affiliate Marketing Mastery</h3>
+                        <p class="course-description">Master the art of affiliate marketing and start earning passive income.</p>
+                        <button class="course-btn" data-course="affiliate">View Guidelines</button>
+                    </div>
+                </div>
+                
+                <!-- Course 3 -->
+                <div class="course-card">
+                    <div class="course-image">
+                        <i class="fas fa-search-dollar"></i>
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">SEO Optimization</h3>
+                        <p class="course-description">Learn advanced SEO techniques to rank your website on Google.</p>
+                        <button class="course-btn" data-course="seo">View Guidelines</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Blog Section -->
-    <section class="blog-section">
+    <section class="blog-section" id="blog">
         <div class="container">
             <div class="section-title">
-                <h2>Latest Posts</h2>
+                <h2>Latest Articles by Muhammad Talha</h2>
             </div>
             <div class="blog-container">
                 <div class="blog-posts">
                     <!-- Blog Post 1 -->
                     <article class="blog-post">
-                        <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Blog Post">
+                        <div class="post-image">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
                         <div class="blog-content">
                             <div class="blog-meta">
                                 <span><i class="far fa-calendar"></i> May 15, 2023</span>
                                 <span><i class="far fa-comment"></i> 24 Comments</span>
                             </div>
                             <h3>10 Proven Ways to Monetize Your Blog in 2023</h3>
-                            <p>Discover the most effective strategies to turn your blog into a profitable business with these expert tips...</p>
+                            <p>Discover the most effective strategies to turn your blog into a profitable business with these expert tips by Muhammad Talha...</p>
                             <div class="categories">
                                 <span class="category">Blogging</span>
                                 <span class="category">Make Money</span>
@@ -547,14 +862,16 @@
                     
                     <!-- Blog Post 2 -->
                     <article class="blog-post">
-                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Blog Post">
+                        <div class="post-image">
+                            <i class="fas fa-search"></i>
+                        </div>
                         <div class="blog-content">
                             <div class="blog-meta">
                                 <span><i class="far fa-calendar"></i> May 12, 2023</span>
                                 <span><i class="far fa-comment"></i> 18 Comments</span>
                             </div>
                             <h3>The Ultimate Guide to SEO for Beginners</h3>
-                            <p>Learn how to optimize your website for search engines and drive organic traffic with this comprehensive guide...</p>
+                            <p>Learn how to optimize your website for search engines and drive organic traffic with this comprehensive guide by Muhammad Talha...</p>
                             <div class="categories">
                                 <span class="category">SEO</span>
                                 <span class="category">Marketing</span>
@@ -565,14 +882,16 @@
                     
                     <!-- Blog Post 3 -->
                     <article class="blog-post">
-                        <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Blog Post">
+                        <div class="post-image">
+                            <i class="fas fa-envelope"></i>
+                        </div>
                         <div class="blog-content">
                             <div class="blog-meta">
                                 <span><i class="far fa-calendar"></i> May 10, 2023</span>
                                 <span><i class="far fa-comment"></i> 32 Comments</span>
                             </div>
                             <h3>How to Build an Email List That Converts</h3>
-                            <p>Email marketing is still one of the most effective ways to connect with your audience and drive sales...</p>
+                            <p>Email marketing is still one of the most effective ways to connect with your audience and drive sales. Muhammad Talha shares his secrets...</p>
                             <div class="categories">
                                 <span class="category">Email Marketing</span>
                                 <span class="category">Conversion</span>
@@ -583,14 +902,16 @@
                     
                     <!-- Blog Post 4 -->
                     <article class="blog-post">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Blog Post">
+                        <div class="post-image">
+                            <i class="fas fa-share-alt"></i>
+                        </div>
                         <div class="blog-content">
                             <div class="blog-meta">
                                 <span><i class="far fa-calendar"></i> May 8, 2023</span>
                                 <span><i class="far fa-comment"></i> 15 Comments</span>
                             </div>
                             <h3>Content Creation Strategies for Social Media</h3>
-                            <p>Learn how to create engaging content that resonates with your audience across all social media platforms...</p>
+                            <p>Learn how to create engaging content that resonates with your audience across all social media platforms. Tips from Muhammad Talha...</p>
                             <div class="categories">
                                 <span class="category">Social Media</span>
                                 <span class="category">Content</span>
@@ -602,13 +923,11 @@
                 
                 <!-- Sidebar -->
                 <aside class="sidebar">
-                    <!-- Search Widget -->
+                    <!-- About Widget -->
                     <div class="sidebar-widget">
-                        <h3>Search</h3>
-                        <div class="newsletter-form">
-                            <input type="text" placeholder="Search...">
-                            <button><i class="fas fa-search"></i></button>
-                        </div>
+                        <h3>About Muhammad Talha</h3>
+                        <p>Professional blogger and digital marketing expert with over 5 years of experience in helping people earn money online.</p>
+                        <a href="#" class="btn">Read More</a>
                     </div>
                     
                     <!-- Categories Widget -->
@@ -639,7 +958,7 @@
                     <!-- Newsletter Widget -->
                     <div class="sidebar-widget">
                         <h3>Subscribe to Newsletter</h3>
-                        <p>Get the latest posts delivered right to your inbox</p>
+                        <p>Get the latest posts from Muhammad Talha delivered right to your inbox</p>
                         <div class="newsletter-form">
                             <input type="email" placeholder="Your email...">
                             <button><i class="fas fa-paper-plane"></i></button>
@@ -663,8 +982,8 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-widget">
-                    <h3>About ProBlog</h3>
-                    <p>ProBlog is a professional blogging platform that provides expert tips, tutorials and insights to help you grow your online presence and earn money from your blog.</p>
+                    <h3>About Muhammad Talha</h3>
+                    <p>Professional blogger and digital marketing expert with over 5 years of experience in helping people earn money online.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
@@ -677,10 +996,10 @@
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
                         <li><a href="#">Home</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Our Services</a></li>
+                        <li><a href="#">About Muhammad Talha</a></li>
+                        <li><a href="#">Courses</a></li>
                         <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Contact</a></li>
                     </ul>
                 </div>
                 
@@ -696,35 +1015,215 @@
                 </div>
                 
                 <div class="footer-widget">
-                    <h3>Contact Us</h3>
+                    <h3>Contact Muhammad Talha</h3>
                     <ul class="footer-links">
-                        <li><i class="fas fa-map-marker-alt"></i> 123 Street, Karachi, Pakistan</li>
-                        <li><i class="fas fa-phone"></i> +92 300 1234567</li>
-                        <li><i class="fas fa-envelope"></i> info@problog.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Karachi, Pakistan</li>
+                        <li><i class="fas fa-phone"></i> +92 313 6590350</li>
+                        <li><i class="fas fa-envelope"></i> muhammadtalha@example.com</li>
                     </ul>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2023 ProBlog. All Rights Reserved.</p>
+                <p>&copy; 2023 Muhammad Talha Blog. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
+    <!-- Course Guidelines Modal -->
+    <div class="modal" id="course-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="modal-title">Course Guidelines</h2>
+                <button class="close-btn">&times;</button>
+            </div>
+            <div class="modal-body" id="modal-body">
+                <!-- Course guidelines will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="contact-info" id="contact-details">
+        <h3>Contact Muhammad Talha</h3>
+        <p><i class="fas fa-phone"></i> +92 313 6590350</p>
+        <p><i class="fas fa-envelope"></i> muhammadtalha@example.com</p>
+        <p><i class="fas fa-map-marker-alt"></i> Karachi, Pakistan</p>
+    </div>
+
     <script>
-        // Simple JavaScript for interactive elements
         document.addEventListener('DOMContentLoaded', function() {
+            // Contact link functionality
+            const contactLink = document.getElementById('contact-link');
+            const contactDetails = document.getElementById('contact-details');
+            
+            contactLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                contactDetails.classList.toggle('active');
+            });
+            
+            // Search functionality
+            const searchInput = document.querySelector('.search-input');
+            const searchBtn = document.querySelector('.search-btn');
+            const searchSuggestions = document.querySelector('.search-suggestions');
+            
+            searchInput.addEventListener('focus', function() {
+                searchSuggestions.classList.add('active');
+            });
+            
+            searchInput.addEventListener('blur', function() {
+                setTimeout(() => {
+                    searchSuggestions.classList.remove('active');
+                }, 200);
+            });
+            
+            searchBtn.addEventListener('click', function() {
+                const searchTerm = searchInput.value;
+                if (searchTerm) {
+                    alert(`Searching for: ${searchTerm}\n\nIn a real implementation, this would show search results for "${searchTerm}"`);
+                }
+            });
+            
+            // Course guidelines modal
+            const modal = document.getElementById('course-modal');
+            const modalTitle = document.getElementById('modal-title');
+            const modalBody = document.getElementById('modal-body');
+            const closeBtn = document.querySelector('.close-btn');
+            const courseBtns = document.querySelectorAll('.course-btn');
+            
+            const courseGuidelines = {
+                blogging: {
+                    title: 'Complete Blogging Course - Guidelines',
+                    content: `
+                        <div class="guidelines">
+                            <h3>Course Overview</h3>
+                            <p>This comprehensive blogging course by Muhammad Talha will teach you everything you need to know to create a successful blog from scratch.</p>
+                            
+                            <h3>What You'll Learn</h3>
+                            <ul>
+                                <li>How to choose a profitable niche for your blog</li>
+                                <li>Setting up your blog with WordPress</li>
+                                <li>Creating content that attracts readers</li>
+                                <li>Optimizing your blog for search engines (SEO)</li>
+                                <li>Monetization strategies (AdSense, affiliate marketing, etc.)</li>
+                                <li>Building an email list</li>
+                                <li>Social media promotion techniques</li>
+                            </ul>
+                            
+                            <h3>Course Requirements</h3>
+                            <ul>
+                                <li>Basic computer skills</li>
+                                <li>Internet access</li>
+                                <li>Willingness to learn and implement</li>
+                            </ul>
+                            
+                            <h3>Duration</h3>
+                            <p>8 weeks (2 lessons per week)</p>
+                            
+                            <h3>Certification</h3>
+                            <p>Upon completion, you'll receive a certificate from Muhammad Talha's Blog Academy.</p>
+                        </div>
+                    `
+                },
+                affiliate: {
+                    title: 'Affiliate Marketing Mastery - Guidelines',
+                    content: `
+                        <div class="guidelines">
+                            <h3>Course Overview</h3>
+                            <p>Master the art of affiliate marketing with this comprehensive course by Muhammad Talha. Learn how to earn passive income by promoting other people's products.</p>
+                            
+                            <h3>What You'll Learn</h3>
+                            <ul>
+                                <li>Understanding affiliate marketing basics</li>
+                                <li>Choosing the right affiliate programs</li>
+                                <li>Creating content that converts</li>
+                                <li>Building an audience that trusts you</li>
+                                <li>Advanced strategies for increasing conversions</li>
+                                <li>Tracking and analyzing your results</li>
+                                <li>Scaling your affiliate income</li>
+                            </ul>
+                            
+                            <h3>Course Requirements</h3>
+                            <ul>
+                                <li>Basic understanding of blogging</li>
+                                <li>Internet access</li>
+                                <li>Willingness to implement strategies</li>
+                            </ul>
+                            
+                            <h3>Duration</h3>
+                            <p>6 weeks (2 lessons per week)</p>
+                            
+                            <h3>Certification</h3>
+                            <p>Upon completion, you'll receive a certificate from Muhammad Talha's Affiliate Marketing Academy.</p>
+                        </div>
+                    `
+                },
+                seo: {
+                    title: 'SEO Optimization - Guidelines',
+                    content: `
+                        <div class="guidelines">
+                            <h3>Course Overview</h3>
+                            <p>Learn advanced SEO techniques to rank your website on Google with this comprehensive course by Muhammad Talha. Drive organic traffic to your site.</p>
+                            
+                            <h3>What You'll Learn</h3>
+                            <ul>
+                                <li>Understanding search engine algorithms</li>
+                                <li>Keyword research and analysis</li>
+                                <li>On-page optimization techniques</li>
+                                <li>Technical SEO (site speed, mobile optimization, etc.)</li>
+                                <li>Link building strategies</li>
+                                <li>Content optimization for SEO</li>
+                                <li>Local SEO optimization</li>
+                                <li>Analytics and tracking</li>
+                            </ul>
+                            
+                            <h3>Course Requirements</h3>
+                            <ul>
+                                <li>Basic understanding of websites</li>
+                                <li>Internet access</li>
+                                <li>Willingness to implement technical changes</li>
+                            </ul>
+                            
+                            <h3>Duration</h3>
+                            <p>10 weeks (2 lessons per week)</p>
+                            
+                            <h3>Certification</h3>
+                            <p>Upon completion, you'll receive a certificate from Muhammad Talha's SEO Academy.</p>
+                        </div>
+                    `
+                }
+            };
+            
+            courseBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const course = this.getAttribute('data-course');
+                    const guidelines = courseGuidelines[course];
+                    
+                    modalTitle.textContent = guidelines.title;
+                    modalBody.innerHTML = guidelines.content;
+                    modal.classList.add('active');
+                });
+            });
+            
+            closeBtn.addEventListener('click', function() {
+                modal.classList.remove('active');
+            });
+            
+            window.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
+                }
+            });
+            
             // Newsletter form submission
-            const newsletterForm = document.querySelectorAll('.newsletter-form');
-            newsletterForm.forEach(form => {
+            const newsletterForms = document.querySelectorAll('.newsletter-form');
+            newsletterForms.forEach(form => {
                 form.addEventListener('submit', function(e) {
                     e.preventDefault();
                     const input = this.querySelector('input');
-                    if(input.type === 'email' && input.value) {
-                        alert('Thank you for subscribing with: ' + input.value);
+                    if(input.value) {
+                        alert('Thank you for subscribing to Muhammad Talha\'s newsletter with: ' + input.value);
                         input.value = '';
-                    } else if(input.type === 'text') {
-                        alert('Searching for: ' + input.value);
                     }
                 });
             });
@@ -753,3 +1252,483 @@
     </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                      
+
+                                      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
