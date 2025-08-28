@@ -1,23 +1,11 @@
 <!DOCTYPE html>
-<html lang="ur">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Muhammad Talha's Professional Blog - Online earning, courses and expert tips">
-    <title>Muhammad Talha - Expert Blogger</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>LearnHub - Premium Courses</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        :root {
-            --primary: #6c5ce7;
-            --secondary: #a29bfe;
-            --accent: #fd79a8;
-            --light: #f8f9fa;
-            --dark: #2d3436;
-            --gray: #636e72;
-            --success: #00b894;
-            --danger: #d63031;
-        }
-        
         * {
             margin: 0;
             padding: 0;
@@ -26,13 +14,13 @@
         }
         
         body {
-            background-color: #f5f7fa;
-            color: var(--dark);
+            background-color: #f8f9fa;
+            color: #333;
             line-height: 1.6;
         }
         
         .container {
-            width: 100%;
+            width: 90%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 15px;
@@ -40,110 +28,166 @@
         
         /* Header Styles */
         header {
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             position: sticky;
             top: 0;
             z-index: 100;
         }
         
-        .header-top {
-            background-color: var(--primary);
-            color: white;
-            padding: 8px 0;
-            font-size: 14px;
-        }
-        
-        .header-top .container {
-            display: flex;
-            justify-content: space-between;
-        }
-        
-        .social-links a {
-            color: white;
-            margin-left: 15px;
-            transition: all 0.3s ease;
-        }
-        
-        .social-links a:hover {
-            color: var(--accent);
-        }
-        
-        .main-header {
-            padding: 15px 0;
-        }
-        
-        .main-header .container {
+        .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 20px 0;
         }
         
         .logo {
             font-size: 28px;
-            font-weight: 700;
-            color: var(--primary);
-            text-decoration: none;
+            font-weight: bold;
+            color: #2c3e50;
             display: flex;
             align-items: center;
+            cursor: pointer;
+            text-decoration: none;
         }
         
         .logo i {
             margin-right: 10px;
-            color: var(--secondary);
+            color: #3498db;
         }
         
-        nav ul {
+        .nav-links {
             display: flex;
             list-style: none;
         }
         
-        nav ul li {
-            margin-left: 25px;
-        }
-        
-        nav ul li a {
-            text-decoration: none;
-            color: var(--dark);
-            font-weight: 500;
-            font-size: 16px;
+        .nav-links li {
+            margin-left: 30px;
             position: relative;
-            transition: all 0.3s ease;
         }
         
-        nav ul li a:hover {
-            color: var(--primary);
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
         }
         
-        nav ul li a::after {
+        .nav-links a:hover {
+            color: #3498db;
+        }
+        
+        .nav-links a::after {
             content: '';
             position: absolute;
             width: 0;
             height: 2px;
-            background-color: var(--primary);
             bottom: -5px;
             left: 0;
-            transition: all 0.3s ease;
+            background-color: #3498db;
+            transition: width 0.3s;
         }
         
-        nav ul li a:hover::after {
+        .nav-links a:hover::after {
             width: 100%;
+        }
+        
+        /* Dropdown for Contact */
+        .dropdown {
+            position: relative;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            z-index: 1;
+            border-radius: 4px;
+            padding: 10px;
+            top: 100%;
+            left: 0;
+        }
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        
+        .dropdown-content p {
+            margin: 8px 0;
+            font-size: 14px;
+            color: #555;
+        }
+        
+        .dropdown-content i {
+            margin-right: 8px;
+            color: #3498db;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-icons a {
+            color: #555;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+        
+        .social-icons a:hover {
+            color: #3498db;
+        }
+        
+        /* Search Bar Styles */
+        .search-container {
+            margin: 30px 0;
+        }
+        
+        .search-form {
+            display: flex;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .search-input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px 0 0 4px;
+            font-size: 16px;
+        }
+        
+        .search-btn {
+            padding: 12px 20px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        
+        .search-btn:hover {
+            background-color: #2980b9;
         }
         
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&auto=format&fit=crop&w=1770&q=80');
-            background-size: cover;
-            background-position: center;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80') center/cover;
             color: white;
-            padding: 100px 0;
             text-align: center;
+            padding: 100px 0;
+            margin-bottom: 40px;
         }
         
         .hero h1 {
             font-size: 48px;
             margin-bottom: 20px;
-            font-weight: 700;
         }
         
         .hero p {
@@ -155,234 +199,85 @@
         .btn {
             display: inline-block;
             padding: 12px 30px;
-            background-color: var(--primary);
+            background-color: #3498db;
             color: white;
             text-decoration: none;
-            border-radius: 30px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: background-color 0.3s, transform 0.3s;
         }
         
         .btn:hover {
-            background-color: var(--secondary);
+            background-color: #2980b9;
             transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
         
-        /* Ad Banner */
-        .ad-banner {
-            background-color: #f0f0f0;
-            padding: 20px;
-            text-align: center;
-            margin: 20px 0;
-            border-radius: 8px;
-        }
-        
-        .ad-banner p {
-            color: var(--gray);
-            font-size: 14px;
-        }
-        
-        /* Search Section */
-        .search-section {
+        /* CEO Section */
+        .ceo-section {
+            background-color: #fff;
             padding: 40px 0;
-            background-color: white;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-bottom: 40px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
         
-        .search-container {
-            position: relative;
-            max-width: 600px;
-            margin: 0 auto;
+        .ceo-container {
+            display: flex;
+            align-items: center;
+            gap: 30px;
         }
         
-        .search-input {
-            width: 100%;
-            padding: 15px 50px 15px 20px;
-            border: 2px solid var(--light);
-            border-radius: 30px;
-            font-size: 16px;
-            outline: none;
-            transition: all 0.3s ease;
-        }
-        
-        .search-input:focus {
-            border-color: var(--primary);
-        }
-        
-        .search-btn {
-            position: absolute;
-            right: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: var(--primary);
-            color: white;
-            border: none;
-            width: 40px;
-            height: 40px;
+        .ceo-image {
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
-            cursor: pointer;
-            transition: all 0.3s ease;
+            object-fit: cover;
+            border: 5px solid #3498db;
         }
         
-        .search-btn:hover {
-            background-color: var(--secondary);
+        .ceo-info h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 28px;
         }
         
-        .search-suggestions {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            right: 0;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin-top: 10px;
-            display: none;
-            z-index: 10;
-        }
-        
-        .search-suggestions.active {
-            display: block;
-        }
-        
-        .suggestion-item {
-            padding: 12px 20px;
-            border-bottom: 1px solid var(--light);
-            cursor: pointer;
-            transition: all 0.3s ease;
+        .ceo-info p {
+            margin-bottom: 10px;
+            color: #555;
             display: flex;
             align-items: center;
         }
         
-        .suggestion-item i {
+        .ceo-info i {
             margin-right: 10px;
-            color: var(--primary);
+            color: #3498db;
+            width: 20px;
         }
         
-        .suggestion-item:hover {
-            background-color: var(--light);
-        }
-        
-        .suggestion-item:last-child {
-            border-bottom: none;
-        }
-        
-        /* Blog Section */
-        .blog-section {
-            padding: 80px 0;
+        /* Courses Section */
+        .courses {
+            padding: 60px 0;
         }
         
         .section-title {
             text-align: center;
-            margin-bottom: 50px;
-        }
-        
-        .section-title h2 {
+            margin-bottom: 40px;
             font-size: 36px;
-            color: var(--dark);
+            color: #2c3e50;
             position: relative;
-            display: inline-block;
-            padding-bottom: 15px;
         }
         
-        .section-title h2::after {
+        .section-title::after {
             content: '';
             position: absolute;
-            width: 80px;
+            width: 100px;
             height: 3px;
-            background-color: var(--primary);
-            bottom: 0;
+            background-color: #3498db;
+            bottom: -15px;
             left: 50%;
             transform: translateX(-50%);
         }
         
-        .blog-container {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 30px;
-        }
-        
-        .blog-posts {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .blog-post {
-            background-color: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
-        }
-        
-        .blog-post:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-        }
-        
-        .blog-post img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-        
-        .blog-content {
-            padding: 20px;
-        }
-        
-        .blog-meta {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 15px;
-            font-size: 14px;
-            color: var(--gray);
-        }
-        
-        .blog-content h3 {
-            font-size: 20px;
-            margin-bottom: 15px;
-            color: var(--dark);
-        }
-        
-        .blog-content p {
-            margin-bottom: 20px;
-            color: var(--gray);
-        }
-        
-        .read-more {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            transition: all 0.3s ease;
-        }
-        
-        .read-more i {
-            margin-left: 5px;
-            transition: all 0.3s ease;
-        }
-        
-        .read-more:hover {
-            color: var(--secondary);
-        }
-        
-        .read-more:hover i {
-            transform: translateX(5px);
-        }
-        
-        /* Course Section */
-        .course-section {
-            padding: 80px 0;
-            background-color: white;
-        }
-        
-        .courses {
+        .courses-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 30px;
@@ -390,328 +285,749 @@
         
         .course-card {
             background-color: white;
-            border-radius: 10px;
+            border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
-            border: 1px solid var(--light);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
         }
         
         .course-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
         }
         
-        .course-card img {
-            width: 100%;
-            height: 180px;
+        .course-img {
+            height: 200px;
             object-fit: cover;
+            width: 100%;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+            font-size: 18px;
         }
         
         .course-content {
             padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
         
         .course-title {
-            font-size: 20px;
-            margin-bottom: 15px;
-            color: var(--dark);
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #2c3e50;
         }
         
         .course-description {
-            margin-bottom: 20px;
-            color: var(--gray);
+            margin-bottom: 15px;
+            color: #666;
+            flex-grow: 1;
         }
         
-        .course-btn {
-            width: 100%;
-            padding: 10px;
-            background-color: var(--primary);
-            color: white;
-            text-align: center;
-            border-radius: 5px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: none;
-        }
-        
-        .course-btn:hover {
-            background-color: var(--secondary);
-        }
-        
-        /* Course Guidelines Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.7);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .modal.active {
-            display: flex;
-        }
-        
-        .modal-content {
-            background-color: white;
-            border-radius: 10px;
-            width: 90%;
-            max-width: 800px;
-            max-height: 90vh;
-            overflow-y: auto;
-            position: relative;
-        }
-        
-        .modal-header {
-            padding: 20px;
-            border-bottom: 1px solid var(--light);
+        .course-meta {
             display: flex;
             justify-content: space-between;
+            color: #888;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        
+        .course-price {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: auto;
+        }
+        
+        .price-tag {
+            font-size: 24px;
+            font-weight: bold;
+            color: #e74c3c;
+        }
+        
+        .price-tag span {
+            font-size: 14px;
+            color: #888;
+            font-weight: normal;
+            margin-left: 5px;
+        }
+        
+        .enroll-btn {
+            background-color: #2ecc71;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        
+        .enroll-btn:hover {
+            background-color: #27ae60;
+            transform: translateY(-3px);
+        }
+        
+        /* About Section */
+        .about {
+            padding: 60px 0;
+            background-color: #fff;
+        }
+        
+        .about-content {
+            display: flex;
+            gap: 30px;
             align-items: center;
         }
         
-        .modal-title {
-            font-size: 24px;
-            color: var(--dark);
+        .about-text {
+            flex: 1;
         }
         
-        .close-btn {
-            background: none;
-            border: none;
-            font-size: 24px;
-            cursor: pointer;
-            color: var(--gray);
-        }
-        
-        .modal-body {
-            padding: 20px;
-        }
-        
-        .guidelines {
+        .about-text h3 {
+            font-size: 28px;
             margin-bottom: 20px;
+            color: #2c3e50;
         }
         
-        .guidelines h3 {
+        .about-text p {
             margin-bottom: 15px;
-            color: var(--primary);
+            color: #555;
+            line-height: 1.8;
         }
         
-        .guidelines ul {
-            padding-left: 20px;
+        .about-image {
+            flex: 1;
+            height: 400px;
+            background: url('https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80') center/cover;
+            border-radius: 8px;
         }
         
-        .guidelines li {
-            margin-bottom: 10px;
-            color: var(--gray);
+        /* Blog Section */
+        .blog {
+            padding: 60px 0;
+            background-color: #f0f2f5;
         }
         
-        /* Contact Info */
-        .contact-info {
-            display: none;
-            background-color: var(--primary);
-            color: white;
-            padding: 15px;
-            border-radius: 10px;
-            margin-top: 20px;
-            text-align: center;
-        }
-        
-        .contact-info.active {
-            display: block;
-        }
-        
-        .contact-info h3 {
-            margin-bottom: 10px;
-        }
-        
-        .contact-info p {
-            font-size: 18px;
-            font-weight: 600;
-        }
-        
-        /* Sidebar */
-        .sidebar {
-            display: flex;
-            flex-direction: column;
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 30px;
         }
         
-        .sidebar-widget {
+        .blog-card {
             background-color: white;
-            border-radius: 10px;
-            padding: 25px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
         
-        .sidebar-widget h3 {
-            font-size: 20px;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid var(--light);
-            color: var(--dark);
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
         }
         
-        .sidebar-widget ul {
-            list-style: none;
+        .blog-img {
+            height: 200px;
+            background: url('https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80') center/cover;
         }
         
-        .sidebar-widget ul li {
-            padding: 10px 0;
-            border-bottom: 1px solid var(--light);
+        .blog-content {
+            padding: 20px;
         }
         
-        .sidebar-widget ul li:last-child {
-            border-bottom: none;
+        .blog-title {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #2c3e50;
         }
         
-        .sidebar-widget ul li a {
-            text-decoration: none;
-            color: var(--gray);
-            transition: all 0.3s ease;
+        .blog-description {
+            margin-bottom: 15px;
+            color: #666;
+        }
+        
+        .blog-meta {
             display: flex;
             justify-content: space-between;
+            color: #888;
+            font-size: 14px;
+            margin-bottom: 15px;
         }
         
-        .sidebar-widget ul li a:hover {
-            color: var(--primary);
+        .read-more {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-block;
+            transition: color 0.3s;
         }
         
-        .newsletter-form {
+        .read-more:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 60px 0;
+            background-color: #fff;
+        }
+        
+        .contact-content {
             display: flex;
-            margin-top: 15px;
+            gap: 30px;
         }
         
-        .newsletter-form input {
+        .contact-form {
             flex: 1;
+        }
+        
+        .contact-form h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #333;
+        }
+        
+        .form-control {
+            width: 100%;
             padding: 12px;
             border: 1px solid #ddd;
-            border-radius: 5px 0 0 5px;
-            outline: none;
+            border-radius: 4px;
+            font-size: 16px;
         }
         
-        .newsletter-form button {
-            background-color: var(--primary);
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .contact-info {
+            flex: 1;
+        }
+        
+        .contact-info h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .contact-item i {
+            font-size: 24px;
+            color: #3498db;
+            margin-right: 15px;
+            width: 30px;
+            text-align: center;
+        }
+        
+        .contact-item p {
+            margin: 0;
+            color: #555;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: #f0f2f5;
+            border-radius: 50%;
+            color: #3498db;
+            font-size: 18px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: #3498db;
+            color: white;
+        }
+        
+        /* Course Details Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            overflow: auto;
+        }
+        
+        .modal-content {
+            background-color: #fff;
+            margin: 5% auto;
+            padding: 0;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 800px;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+            animation: modalopen 0.5s;
+        }
+        
+        @keyframes modalopen {
+            from {opacity: 0; transform: translateY(-50px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+        
+        .modal-header {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .modal-header img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .modal-header h2 {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            color: white;
+            padding: 20px;
+            margin: 0;
+            font-size: 28px;
+        }
+        
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            color: white;
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 10;
+            background-color: rgba(0, 0, 0, 0.5);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .close:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        
+        .modal-body {
+            padding: 30px;
+        }
+        
+        .modal-body h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+        
+        .modal-body p {
+            margin-bottom: 20px;
+            color: #555;
+            line-height: 1.8;
+        }
+        
+        .modal-body ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .modal-body li {
+            margin-bottom: 10px;
+            color: #555;
+        }
+        
+        .modal-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 30px;
+            background-color: #f8f9fa;
+            border-top: 1px solid #eee;
+        }
+        
+        .modal-price {
+            font-size: 24px;
+            font-weight: bold;
+            color: #e74c3c;
+        }
+        
+        .modal-price span {
+            font-size: 14px;
+            color: #888;
+            font-weight: normal;
+            margin-left: 5px;
+        }
+        
+        /* Payment Modal */
+        .payment-modal .modal-content {
+            max-width: 600px;
+        }
+        
+        .payment-header {
+            background-color: #3498db;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+        }
+        
+        .payment-body {
+            padding: 30px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #333;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .form-row .form-group {
+            flex: 1;
+        }
+        
+        .payment-methods {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .payment-method {
+            flex: 1 1 calc(50% - 15px);
+            min-width: 200px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: border-color 0.3s, background-color 0.3s;
+        }
+        
+        .payment-method:hover {
+            border-color: #3498db;
+            background-color: #f8f9fa;
+        }
+        
+        .payment-method.selected {
+            border-color: #3498db;
+            background-color: #e3f2fd;
+        }
+        
+        .payment-method i {
+            font-size: 24px;
+            margin-bottom: 5px;
+            display: block;
+        }
+        
+        .payment-details {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+        
+        .payment-details h4 {
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        
+        .payment-details p {
+            margin-bottom: 10px;
+            color: #555;
+        }
+        
+        .payment-details strong {
+            color: #333;
+        }
+        
+        .otp-container {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .otp-inputs {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        
+        .otp-input {
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            font-size: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .payment-footer {
+            padding: 20px 30px;
+            background-color: #f8f9fa;
+            border-top: 1px solid #eee;
+            text-align: right;
+        }
+        
+        .pay-btn {
+            background-color: #2ecc71;
             color: white;
             border: none;
-            padding: 0 15px;
-            border-radius: 0 5px 5px 0;
+            padding: 12px 30px;
+            border-radius: 4px;
             cursor: pointer;
-            transition: all 0.3s ease;
+            font-size: 16px;
+            font-weight: 500;
+            transition: background-color 0.3s;
         }
         
-        .newsletter-form button:hover {
-            background-color: var(--secondary);
+        .pay-btn:hover {
+            background-color: #27ae60;
         }
         
-        /* Categories */
-        .category {
-            display: inline-block;
-            padding: 5px 12px;
-            background-color: var(--light);
-            color: var(--gray);
-            border-radius: 20px;
-            font-size: 12px;
-            margin-right: 5px;
+        .verify-btn {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+        
+        .verify-btn:hover {
+            background-color: #2980b9;
+        }
+        
+        /* Success Message */
+        .success-message {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #2ecc71;
+            color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            z-index: 2000;
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+        }
+        
+        .success-message h3 {
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+        
+        .success-message p {
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .success-message button {
+            background-color: white;
+            color: #2ecc71;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+        
+        .success-message button:hover {
+            background-color: #f8f9fa;
+        }
+        
+        /* Notification to CEO */
+        .ceo-notification {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #3498db;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            z-index: 2000;
+            max-width: 300px;
+        }
+        
+        .ceo-notification h4 {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        
+        .ceo-notification p {
             margin-bottom: 5px;
+            font-size: 14px;
+        }
+        
+        .ceo-notification button {
+            background-color: white;
+            color: #3498db;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            margin-top: 10px;
         }
         
         /* Footer */
         footer {
-            background-color: var(--dark);
+            background-color: #2c3e50;
             color: white;
-            padding: 70px 0 20px;
+            padding: 60px 0 20px;
         }
         
-        .footer-content {
+        .footer-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 30px;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
         }
         
-        .footer-widget h3 {
-            font-size: 20px;
-            margin-bottom: 25px;
+        .footer-col h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
             position: relative;
-            padding-bottom: 10px;
         }
         
-        .footer-widget h3::after {
+        .footer-col h3::after {
             content: '';
             position: absolute;
+            left: 0;
+            bottom: -10px;
             width: 50px;
             height: 2px;
-            background-color: var(--primary);
-            bottom: 0;
-            left: 0;
+            background-color: #3498db;
         }
         
-        .footer-widget p {
-            margin-bottom: 20px;
-            color: #aaa;
-        }
-        
-        .footer-links {
+        .footer-col ul {
             list-style: none;
         }
         
-        .footer-links li {
-            margin-bottom: 12px;
+        .footer-col ul li {
+            margin-bottom: 10px;
         }
         
-        .footer-links li a {
-            color: #aaa;
+        .footer-col ul li a {
+            color: #bbb;
             text-decoration: none;
-            transition: all 0.3s ease;
-            display: inline-block;
+            transition: color 0.3s;
         }
         
-        .footer-links li a:hover {
-            color: var(--primary);
-            padding-left: 5px;
+        .footer-col ul li a:hover {
+            color: #3498db;
         }
         
         .footer-bottom {
             text-align: center;
             padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,0.1);
+            border-top: 1px solid #34495e;
             font-size: 14px;
-            color: #aaa;
+            color: #bbb;
         }
         
-        /* Responsive */
-        @media (max-width: 992px) {
-            .blog-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .sidebar {
-                order: -1;
-            }
+        /* Responsive Styles */
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
         }
         
         @media (max-width: 768px) {
-            .main-header .container {
+            .menu-toggle {
+                display: block;
+            }
+            
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: white;
                 flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                display: none;
             }
             
-            nav {
-                margin-top: 20px;
+            .nav-links.active {
+                display: flex;
             }
             
-            nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
+            .nav-links li {
+                margin: 10px 0;
             }
             
-            nav ul li {
-                margin: 5px 10px;
+            .social-icons {
+                display: none;
             }
             
             .hero h1 {
@@ -719,21 +1035,25 @@
             }
             
             .hero p {
-                font-size: 16px;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .blog-posts {
-                grid-template-columns: 1fr;
+                font-size: 18px;
             }
             
-            .courses {
-                grid-template-columns: 1fr;
+            .ceo-container {
+                flex-direction: column;
+                text-align: center;
             }
             
-            .footer-content {
-                grid-template-columns: 1fr;
+            .about-content, .contact-content {
+                flex-direction: column;
+            }
+            
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+            
+            .payment-method {
+                flex: 1 1 100%;
             }
         }
     </style>
@@ -741,551 +1061,868 @@
 <body>
     <!-- Header -->
     <header>
-        <div class="header-top">
-            <div class="container">
-                <div class="contact-info">
-                    <span><i class="fas fa-phone"></i> +92 313 6590350</span>
-                    <span><i class="fas fa-envelope"></i> muhammadtalha@example.com</span>
-                </div>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="main-header">
-            <div class="container">
-                <a href="#" class="logo">
-                    <i class="fas fa-blog"></i> Muhammad Talha
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo" id="logoReload">
+                    <i class="fas fa-graduation-cap"></i>
+                    LearnHub
                 </a>
-                <nav>
-                    <ul>
-                        <li><a href="#" id="contact-link">Contact</a></li>
-                        <li><a href="#courses">Courses</a></li>
-                        <li><a href="#blog">Blog</a></li>
-                        <li><a href="#about">About</a></li>
-                    </ul>
-                </nav>
-            </div>
+                <div class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#courses">Courses</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li class="dropdown">
+                        <a href="#contact">Contact</a>
+                        <div class="dropdown-content">
+                            <p><i class="fas fa-phone"></i> 03136590350</p>
+                            <p><i class="fas fa-envelope"></i> mtalhaofficial715@gmail.com</p>
+                            <p><i class="fas fa-map-marker-alt"></i> Rahim Yar Khan, Pakistan</p>
+                        </div>
+                    </li>
+                </ul>
+                <div class="social-icons">
+                    <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </nav>
         </div>
     </header>
 
-    <!-- Ad Banner -->
-    <div class="ad-banner">
-        <p>Advertisement - <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
-        <!-- Header Ad -->
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-             data-ad-slot="XXXXXXXXXX"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-        <script>
-             (adsbygoogle = window.adsbygoogle || []).push({});
-        </script></p>
-    </div>
-
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="home">
         <div class="container">
-            <h1>Welcome to Muhammad Talha's Blog</h1>
-            <p>Expert tips, tutorials and insights to grow your online presence and earn money from your blog</p>
+            <h1>Premium Online Courses</h1>
+            <p>Learn from industry experts and advance your career with our comprehensive courses</p>
             <a href="#courses" class="btn">Explore Courses</a>
         </div>
     </section>
 
+    <!-- CEO Section -->
+    <section class="ceo-section">
+        <div class="container">
+            <div class="ceo-container">
+                <img src="talha.jpg.jpg" alt="CEO" class="ceo-image">
+                <div class="ceo-info">
+                    <h2>Meet Our CEO</h2>
+                    <p><i class="fas fa-user"></i> <strong>Name:</strong> MUHAMMAD TALHA</p>
+                    <p><i class="fas fa-map-marker-alt"></i> <strong>Address:</strong> Rahim Yar Khan, Pakistan</p>
+                    <p><i class="fas fa-phone"></i> <strong>Phone:</strong> 03136590350</p>
+                    <p><i class="fas fa-envelope"></i> <strong>Email:</strong> mtalhaofficial715.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Search Section -->
-    <section class="search-section">
+    <section class="search-container">
         <div class="container">
-            <div class="search-container">
-                <input type="text" class="search-input" placeholder="Search for articles, courses, topics...">
-                <button class="search-btn"><i class="fas fa-search"></i></button>
-                <div class="search-suggestions">
-                    <div class="suggestion-item"><i class="fas fa-search"></i> Blogging Tips for Beginners</div>
-                    <div class="suggestion-item"><i class="fas fa-search"></i> How to Earn Money Online</div>
-                    <div class="suggestion-item"><i class="fas fa-search"></i> Google AdSense Guide</div>
-                    <div class="suggestion-item"><i class="fas fa-search"></i> Affiliate Marketing Strategies</div>
-                    <div class="suggestion-item"><i class="fas fa-search"></i> SEO Optimization Techniques</div>
+            <form class="search-form" id="searchForm">
+                <input type="text" class="search-input" id="searchInput" placeholder="Search for courses...">
+                <button type="submit" class="search-btn">Search</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section class="courses" id="courses">
+        <div class="container">
+            <h2 class="section-title">Popular Courses</h2>
+            <div class="courses-grid">
+                <div class="course-card" data-title="Web Development">
+                    <div class="course-img" style="background: url('https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80') center/cover;"></div>
+                    <div class="course-content">
+                        <h3 class="course-title">Web Development</h3>
+                        <p class="course-description">Learn HTML, CSS, JavaScript and modern frameworks to build responsive websites.</p>
+                        <div class="course-meta">
+                            <span><i class="far fa-clock"></i> 8 weeks</span>
+                            <span><i class="fas fa-star"></i> 4.8</span>
+                        </div>
+                        <div class="course-price">
+                            <div class="price-tag">$100 <span>Only</span></div>
+                            <button class="enroll-btn" data-course="Web Development">Enroll Now</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="course-card" data-title="Data Science">
+                    <div class="course-img" style="background: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80') center/cover;"></div>
+                    <div class="course-content">
+                        <h3 class="course-title">Data Science</h3>
+                        <p class="course-description">Master data analysis, visualization, and machine learning techniques.</p>
+                        <div class="course-meta">
+                            <span><i class="far fa-clock"></i> 10 weeks</span>
+                            <span><i class="fas fa-star"></i> 4.9</span>
+                        </div>
+                        <div class="course-price">
+                            <div class="price-tag">$100 <span>Only</span></div>
+                            <button class="enroll-btn" data-course="Data Science">Enroll Now</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="course-card" data-title="Digital Marketing">
+                    <div class="course-img" style="background: url('https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80') center/cover;"></div>
+                    <div class="course-content">
+                        <h3 class="course-title">Digital Marketing</h3>
+                        <p class="course-description">Learn SEO, social media marketing, and content strategy to grow businesses online.</p>
+                        <div class="course-meta">
+                            <span><i class="far fa-clock"></i> 6 weeks</span>
+                            <span><i class="fas fa-star"></i> 4.7</span>
+                        </div>
+                        <div class="course-price">
+                            <div class="price-tag">$100 <span>Only</span></div>
+                            <button class="enroll-btn" data-course="Digital Marketing">Enroll Now</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="course-card" data-title="Graphic Design">
+                    <div class="course-img" style="background: url('https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80') center/cover;"></div>
+                    <div class="course-content">
+                        <h3 class="course-title">Graphic Design</h3>
+                        <p class="course-description">Master the principles of design and learn to create stunning visual content.</p>
+                        <div class="course-meta">
+                            <span><i class="far fa-clock"></i> 7 weeks</span>
+                            <span><i class="fas fa-star"></i> 4.6</span>
+                        </div>
+                        <div class="course-price">
+                            <div class="price-tag">$100 <span>Only</span></div>
+                            <button class="enroll-btn" data-course="Graphic Design">Enroll Now</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Course Section -->
-    <section class="course-section" id="courses">
+    <!-- About Section -->
+    <section class="about" id="about">
         <div class="container">
-            <div class="section-title">
-                <h2>Popular Courses by Muhammad Talha</h2>
-            </div>
-            <div class="courses">
-                <!-- Course 1 -->
-                <div class="course-card">
-                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Complete Blogging Course">
-                    <div class="course-content">
-                        <h3 class="course-title">Complete Blogging Course</h3>
-                        <p class="course-description">Learn how to create a successful blog from scratch and monetize it effectively.</p>
-                        <button class="course-btn" data-course="blogging">View Guidelines</button>
-                    </div>
+            <h2 class="section-title">About Us</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Welcome to LearnHub</h3>
+                    <p>LearnHub is a premier online learning platform dedicated to providing high-quality courses that help individuals advance their careers and achieve their professional goals.</p>
+                    <p>Founded by MUHAMMAD TALHA, our mission is to make education accessible to everyone, regardless of their location or background. We believe that learning should be a lifelong journey, and we're committed to providing the resources and support needed to make that journey successful.</p>
+                    <p>Our team of experienced instructors and industry experts are passionate about sharing their knowledge and helping students develop the skills they need to succeed in today's competitive job market.</p>
                 </div>
-                
-                <!-- Course 2 -->
-                <div class="course-card">
-                    <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Affiliate Marketing Mastery">
-                    <div class="course-content">
-                        <h3 class="course-title">Affiliate Marketing Mastery</h3>
-                        <p class="course-description">Master the art of affiliate marketing and start earning passive income.</p>
-                        <button class="course-btn" data-course="affiliate">View Guidelines</button>
-                    </div>
-                </div>
-                
-                <!-- Course 3 -->
-                <div class="course-card">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="SEO Optimization">
-                    <div class="course-content">
-                        <h3 class="course-title">SEO Optimization</h3>
-                        <p class="course-description">Learn advanced SEO techniques to rank your website on Google.</p>
-                        <button class="course-btn" data-course="seo">View Guidelines</button>
-                    </div>
-                </div>
+                <div class="about-image"></div>
             </div>
         </div>
     </section>
-
-    <!-- In-content Ad -->
-    <div class="ad-banner">
-        <p>Advertisement - <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
-        <!-- In-content Ad -->
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-             data-ad-slot="XXXXXXXXXX"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-        <script>
-             (adsbygoogle = window.adsbygoogle || []).push({});
-        </script></p>
-    </div>
 
     <!-- Blog Section -->
-    <section class="blog-section" id="blog">
+    <section class="blog" id="blog">
         <div class="container">
-            <div class="section-title">
-                <h2>Latest Articles by Muhammad Talha</h2>
-            </div>
-            <div class="blog-container">
-                <div class="blog-posts">
-                    <!-- Blog Post 1 -->
-                    <article class="blog-post">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="10 Proven Ways to Monetize Your Blog">
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <span><i class="far fa-calendar"></i> May 15, 2023</span>
-                                <span><i class="far fa-comment"></i> 24 Comments</span>
-                            </div>
-                            <h3>10 Proven Ways to Monetize Your Blog in 2023</h3>
-                            <p>Discover the most effective strategies to turn your blog into a profitable business with these expert tips by Muhammad Talha...</p>
-                            <div class="categories">
-                                <span class="category">Blogging</span>
-                                <span class="category">Make Money</span>
-                            </div>
-                            <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+            <h2 class="section-title">Latest Blog Posts</h2>
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <div class="blog-img" style="background: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80') center/cover;"></div>
+                    <div class="blog-content">
+                        <h3 class="blog-title">10 Tips for Effective Web Design</h3>
+                        <p class="blog-description">Discover the essential principles of web design that will help you create beautiful and functional websites.</p>
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> Aug 15, 2023</span>
+                            <span><i class="far fa-comment"></i> 24 Comments</span>
                         </div>
-                    </article>
-                    
-                    <!-- Blog Post 2 -->
-                    <article class="blog-post">
-                        <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="The Ultimate Guide to SEO">
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <span><i class="far fa-calendar"></i> May 12, 2023</span>
-                                <span><i class="far fa-comment"></i> 18 Comments</span>
-                            </div>
-                            <h3>The Ultimate Guide to SEO for Beginners</h3>
-                            <p>Learn how to optimize your website for search engines and drive organic traffic with this comprehensive guide by Muhammad Talha...</p>
-                            <div class="categories">
-                                <span class="category">SEO</span>
-                                <span class="category">Marketing</span>
-                            </div>
-                            <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </article>
-                    
-                    <!-- Blog Post 3 -->
-                    <article class="blog-post">
-                        <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="How to Build an Email List">
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <span><i class="far fa-calendar"></i> May 10, 2023</span>
-                                <span><i class="far fa-comment"></i> 32 Comments</span>
-                            </div>
-                            <h3>How to Build an Email List That Converts</h3>
-                            <p>Email marketing is still one of the most effective ways to connect with your audience and drive sales. Muhammad Talha shares his secrets...</p>
-                            <div class="categories">
-                                <span class="category">Email Marketing</span>
-                                <span class="category">Conversion</span>
-                            </div>
-                            <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </article>
-                    
-                    <!-- Blog Post 4 -->
-                    <article class="blog-post">
-                        <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7237a0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Content Creation Strategies">
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <span><i class="far fa-calendar"></i> May 8, 2023</span>
-                                <span><i class="far fa-comment"></i> 15 Comments</span>
-                            </div>
-                            <h3>Content Creation Strategies for Social Media</h3>
-                            <p>Learn how to create engaging content that resonates with your audience across all social media platforms. Tips from Muhammad Talha...</p>
-                            <div class="categories">
-                                <span class="category">Social Media</span>
-                                <span class="category">Content</span>
-                            </div>
-                            <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </article>
-                </div>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
                 
-                <!-- Sidebar -->
-                <aside class="sidebar">
-                    <!-- About Widget -->
-                    <div class="sidebar-widget">
-                        <h3>About Muhammad Talha</h3>
-                        <p>Professional blogger and digital marketing expert with over 5 years of experience in helping people earn money online.</p>
-                        <a href="#" class="btn">Read More</a>
-                    </div>
-                    
-                    <!-- Sidebar Ad -->
-                    <div class="sidebar-widget">
-                        <h3>Advertisement</h3>
-                        <div style="background-color: #f0f0f0; height: 250px; display: flex; align-items: center; justify-content: center; border-radius: 5px;">
-                            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
-                            <!-- Sidebar Ad -->
-                            <ins class="adsbygoogle"
-                                 style="display:block"
-                                 data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-                                 data-ad-slot="XXXXXXXXXX"
-                                 data-ad-format="auto"
-                                 data-full-width-responsive="true"></ins>
-                            <script>
-                                 (adsbygoogle = window.adsbygoogle || []).push({});
-                            </script>
+                <article class="blog-card">
+                    <div class="blog-img" style="background: url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80') center/cover;"></div>
+                    <div class="blog-content">
+                        <h3 class="blog-title">The Future of Artificial Intelligence</h3>
+                        <p class="blog-description">Exploring how AI is transforming industries and what we can expect in the coming years.</p>
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> Aug 10, 2023</span>
+                            <span><i class="far fa-comment"></i> 18 Comments</span>
                         </div>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
                     </div>
-                    
-                    <!-- Categories Widget -->
-                    <div class="sidebar-widget">
-                        <h3>Categories</h3>
-                        <ul>
-                            <li><a href="#">Blogging <span>(24)</span></a></li>
-                            <li><a href="#">SEO <span>(18)</span></a></li>
-                            <li><a href="#">Marketing <span>(15)</span></a></li>
-                            <li><a href="#">Social Media <span>(12)</span></a></li>
-                            <li><a href="#">Make Money <span>(21)</span></a></li>
-                            <li><a href="#">Web Design <span>(9)</span></a></li>
-                        </ul>
-                    </div>
-                    
-                    <!-- Popular Posts Widget -->
-                    <div class="sidebar-widget">
-                        <h3>Popular Posts</h3>
-                        <ul>
-                            <li><a href="#">How to Start a Profitable Blog in 2023</a></li>
-                            <li><a href="#">The Beginner's Guide to Affiliate Marketing</a></li>
-                            <li><a href="#">10 Tools Every Blogger Needs</a></li>
-                            <li><a href="#">How to Increase Your Blog Traffic by 200%</a></li>
-                            <li><a href="#">The Ultimate Guide to Google AdSense</a></li>
-                        </ul>
-                    </div>
-                    
-                    <!-- Newsletter Widget -->
-                    <div class="sidebar-widget">
-                        <h3>Subscribe to Newsletter</h3>
-                        <p>Get the latest posts from Muhammad Talha delivered right to your inbox</p>
-                        <div class="newsletter-form">
-                            <input type="email" placeholder="Your email...">
-                            <button><i class="fas fa-paper-plane"></i></button>
+                </article>
+                
+                <article class="blog-card">
+                    <div class="blog-img" style="background: url('https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80') center/cover;"></div>
+                    <div class="blog-content">
+                        <h3 class="blog-title">Building a Personal Brand</h3>
+                        <p class="blog-description">Learn how to establish and grow your personal brand in the digital age.</p>
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> Aug 5, 2023</span>
+                            <span><i class="far fa-comment"></i> 32 Comments</span>
                         </div>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
                     </div>
-                </aside>
+                </article>
             </div>
         </div>
     </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-content">
+                <div class="contact-form">
+                    <h3>Send Us a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" class="form-control" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" class="form-control" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Rahim Yar Khan, Pakistan</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <p>03136590350</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>mtalhaofficial715.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <p>Monday - Friday: 8:00 AM - 5:00 PM</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Details Modal -->
+    <div id="courseModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <img id="modalImage" src="" alt="Course Image">
+                <h2 id="modalTitle"></h2>
+            </div>
+            <div class="modal-body">
+                <h3>Course Description</h3>
+                <p id="modalDescription"></p>
+                
+                <h3>What You'll Learn</h3>
+                <ul id="modalLearnList">
+                    <!-- Will be populated dynamically -->
+                </ul>
+                
+                <h3>Course Requirements</h3>
+                <ul id="modalRequirementsList">
+                    <!-- Will be populated dynamically -->
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <div class="modal-price">$100 <span>Only</span></div>
+                <button id="modalEnrollBtn" class="btn">Enroll Now</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Payment Modal -->
+    <div id="paymentModal" class="modal payment-modal">
+        <div class="modal-content">
+            <div class="payment-header">
+                <h2>Complete Your Enrollment</h2>
+                <p id="paymentCourseName"></p>
+            </div>
+            <div class="payment-body">
+                <h3>Personal Information</h3>
+                <div class="form-group">
+                    <label for="clientName">Full Name</label>
+                    <input type="text" id="clientName" class="form-control" placeholder="Your Full Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="clientPhone">Phone Number</label>
+                    <input type="tel" id="clientPhone" class="form-control" placeholder="Your Phone Number" required>
+                </div>
+                <div class="form-group">
+                    <label for="clientEmail">Email Address</label>
+                    <input type="email" id="clientEmail" class="form-control" placeholder="Your Email Address" required>
+                </div>
+                
+                <h3>Payment Method</h3>
+                <div class="payment-methods">
+                    <div class="payment-method selected" data-method="bank">
+                        <i class="fas fa-university"></i>
+                        <div>Bank Transfer</div>
+                    </div>
+                    <div class="payment-method" data-method="easypaisa">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <div>EasyPaisa</div>
+                    </div>
+                    <div class="payment-method" data-method="jazzcash">
+                        <i class="fas fa-money-check-alt"></i>
+                        <div>JazzCash</div>
+                    </div>
+                    <div class="payment-method" data-method="payoneer">
+                        <i class="fas fa-credit-card"></i>
+                        <div>Payoneer</div>
+                    </div>
+                </div>
+                
+                <div id="bankDetails" class="payment-details">
+                    <h4>Bank Transfer Details</h4>
+                    <p><strong>Account Title:</strong> MUHAMMAD TALHA</p>
+                    <p><strong>Bank Name:</strong> Habib Bank Limited (HBL)</p>
+                    <p><strong>Account Number:</strong> 1234567890123</p>
+                    <p><strong>Branch Code:</strong> 1234</p>
+                    <p><strong>IBAN:</strong> PK1234567890123456789012</p>
+                </div>
+                
+                <div id="easypaisaDetails" class="payment-details" style="display: none;">
+                    <h4>EasyPaisa Details</h4>
+                    <p><strong>Account Title:</strong> MUHAMMAD TALHA</p>
+                    <p><strong>EasyPaisa Number:</strong> 03136590350</p>
+                    <p><strong>CNIC:</strong> 12345-1234567-1</p>
+                </div>
+                
+                <div id="jazzcashDetails" class="payment-details" style="display: none;">
+                    <h4>JazzCash Details</h4>
+                    <p><strong>Account Title:</strong> MUHAMMAD TALHA</p>
+                    <p><strong>JazzCash Number:</strong> 03136590350</p>
+                    <p><strong>CNIC:</strong> 12345-1234567-1</p>
+                </div>
+                
+                <div id="payoneerDetails" class="payment-details" style="display: none;">
+                    <h4>Payoneer Details</h4>
+                    <p><strong>Account Name:</strong> MUHAMMAD TALHA</p>
+                    <p><strong>Payoneer Email:</strong> talha@payoneer.com</p>
+                </div>
+                
+                <div id="otpContainer" class="otp-container">
+                    <p>We've sent a verification code to your phone number</p>
+                    <div class="otp-inputs">
+                        <input type="text" class="otp-input" maxlength="1">
+                        <input type="text" class="otp-input" maxlength="1">
+                        <input type="text" class="otp-input" maxlength="1">
+                        <input type="text" class="otp-input" maxlength="1">
+                    </div>
+                    <button id="verifyOtpBtn" class="verify-btn">Verify Code</button>
+                </div>
+            </div>
+            <div class="payment-footer">
+                <button id="payBtn" class="pay-btn">Pay $100</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Message -->
+    <div id="successMessage" class="success-message">
+        <h3>Enrollment Successful!</h3>
+        <p>Thank you for enrolling in our course. We've received your payment and your meeting will be scheduled soon.</p>
+        <p>You will receive a confirmation message shortly with further details.</p>
+        <button id="closeSuccess">OK</button>
+    </div>
+
+    <!-- CEO Notification -->
+    <div id="ceoNotification" class="ceo-notification">
+        <h4>New Enrollment!</h4>
+        <p id="notificationClientName">Client: </p>
+        <p id="notificationCourse">Course: </p>
+        <p id="notificationAmount">Amount: $100</p>
+        <button id="closeNotification">Dismiss</button>
+    </div>
 
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-widget">
-                    <h3>About Muhammad Talha</h3>
-                    <p>Professional blogger and digital marketing expert with over 5 years of experience in helping people earn money online.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>About Us</h3>
+                    <p>We provide high-quality courses and insightful blog posts to help you learn and grow in your career.</p>
                 </div>
-                
-                <div class="footer-widget">
+                <div class="footer-col">
                     <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About Muhammad Talha</a></li>
-                        <li><a href="#">Courses</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Contact</a></li>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#courses">Courses</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#about">About</a></li>
                     </ul>
                 </div>
-                
-                <div class="footer-widget">
+                <div class="footer-col">
                     <h3>Categories</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Blogging Tips</a></li>
-                        <li><a href="#">SEO</a></li>
-                        <li><a href="#">Marketing</a></li>
-                        <li><a href="#">Social Media</a></li>
-                        <li><a href="#">Make Money Online</a></li>
+                    <ul>
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">Data Science</a></li>
+                        <li><a href="#">Digital Marketing</a></li>
+                        <li><a href="#">Graphic Design</a></li>
                     </ul>
                 </div>
-                
-                <div class="footer-widget">
-                    <h3>Contact Muhammad Talha</h3>
-                    <ul class="footer-links">
-                        <li><i class="fas fa-map-marker-alt"></i> RYK, Pakistan</li>
-                        <li><i class="fas fa-phone"></i> +92 313 6590350</li>
-                        <li><i class="fas fa-envelope"></i> mtalhaofficial715@gmail.com</li>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> info@learnhub.com</li>
+                        <li><i class="fas fa-phone"></i> 03136590350</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Rahim Yar Khan, Pakistan</li>
                     </ul>
                 </div>
             </div>
-            
             <div class="footer-bottom">
-                <p>&copy; 2025 Muhammad Talha Blog. All Rights Reserved.</p>
+                <p>&copy; 2023 LearnHub. All Rights Reserved. CEO: MUHAMMAD TALHA</p>
             </div>
         </div>
     </footer>
 
-    <!-- Course Guidelines Modal -->
-    <div class="modal" id="course-modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 class="modal-title" id="modal-title">Course Guidelines</h2>
-                <button class="close-btn">&times;</button>
-            </div>
-            <div class="modal-body" id="modal-body">
-                <!-- Course guidelines will be inserted here -->
-            </div>
-        </div>
-    </div>
-
-    <!-- Contact Info -->
-    <div class="contact-info" id="contact-details">
-        <h3>Contact Muhammad Talha</h3>
-        <p><i class="fas fa-phone"></i> +92 313 6590350</p>
-        <p><i class="fas fa-envelope"></i> mtalhaofficial715@gmail.com</p>
-        <p><i class="fas fa-map-marker-alt"></i> Rahim Yar Khan, Pakistan</p>
-    </div>
-
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Contact link functionality
-            const contactLink = document.getElementById('contact-link');
-            const contactDetails = document.getElementById('contact-details');
+        // Course data
+        const courseData = {
+            "Web Development": {
+                image: "https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                description: "This comprehensive web development course will take you from beginner to professional. You'll learn HTML, CSS, JavaScript, and modern frameworks like React and Node.js. By the end of the course, you'll be able to build responsive, interactive websites and web applications.",
+                learn: [
+                    "Build responsive websites with HTML5 and CSS3",
+                    "Add interactivity with JavaScript",
+                    "Use modern frameworks like React and Vue.js",
+                    "Create backend applications with Node.js",
+                    "Work with databases and APIs",
+                    "Deploy websites to the cloud"
+                ],
+                requirements: [
+                    "Basic computer skills",
+                    "No prior programming experience required",
+                    "A computer with internet access",
+                    "Willingness to learn and practice"
+                ]
+            },
+            "Data Science": {
+                image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                description: "Master the art of data science with this comprehensive course. You'll learn data analysis, visualization, machine learning, and statistical modeling. Work with real-world datasets and industry-standard tools like Python, R, and SQL.",
+                learn: [
+                    "Analyze and visualize data with Python and R",
+                    "Build machine learning models",
+                    "Work with SQL databases",
+                    "Perform statistical analysis",
+                    "Create data-driven insights and reports",
+                    "Apply data science techniques to real problems"
+                ],
+                requirements: [
+                    "Basic understanding of mathematics",
+                    "Familiarity with programming concepts (helpful but not required)",
+                    "A computer with internet access",
+                    "Willingness to learn complex concepts"
+                ]
+            },
+            "Digital Marketing": {
+                image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                description: "Learn the strategies and techniques to grow businesses online with this digital marketing course. Master SEO, social media marketing, content marketing, email marketing, and paid advertising to drive traffic and increase conversions.",
+                learn: [
+                    "Optimize websites for search engines (SEO)",
+                    "Create effective social media campaigns",
+                    "Develop content marketing strategies",
+                    "Design email marketing campaigns",
+                    "Run paid advertising campaigns",
+                    "Analyze marketing data and metrics"
+                ],
+                requirements: [
+                    "Basic computer skills",
+                    "Familiarity with social media platforms",
+                    "A computer with internet access",
+                    "Creativity and analytical thinking"
+                ]
+            },
+            "Graphic Design": {
+                image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                description: "Master the principles of graphic design and learn to create stunning visual content. This course covers design theory, typography, color theory, and industry-standard tools like Adobe Photoshop, Illustrator, and InDesign.",
+                learn: [
+                    "Understand design principles and theory",
+                    "Master typography and color theory",
+                    "Use Adobe Photoshop, Illustrator, and InDesign",
+                    "Create logos, branding, and marketing materials",
+                    "Design for both print and digital media",
+                    "Build a professional portfolio"
+                ],
+                requirements: [
+                    "Basic computer skills",
+                    "Creative mindset",
+                    "A computer with internet access",
+                    "Access to Adobe Creative Cloud (free trial available)"
+                ]
+            }
+        };
+
+        // Logo reload functionality
+        document.getElementById('logoReload').addEventListener('click', function(e) {
+            e.preventDefault();
+            location.reload();
+        });
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        // Search functionality
+        const searchForm = document.getElementById('searchForm');
+        const searchInput = document.getElementById('searchInput');
+        
+        searchForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const searchTerm = searchInput.value.toLowerCase().trim();
             
-            contactLink.addEventListener('click', function(e) {
-                e.preventDefault();
-                contactDetails.classList.toggle('active');
-            });
-            
-            // Search functionality
-            const searchInput = document.querySelector('.search-input');
-            const searchBtn = document.querySelector('.search-btn');
-            const searchSuggestions = document.querySelector('.search-suggestions');
-            
-            searchInput.addEventListener('focus', function() {
-                searchSuggestions.classList.add('active');
-            });
-            
-            searchInput.addEventListener('blur', function() {
-                setTimeout(() => {
-                    searchSuggestions.classList.remove('active');
-                }, 200);
-            });
-            
-            searchBtn.addEventListener('click', function() {
-                const searchTerm = searchInput.value;
-                if (searchTerm) {
-                    alert(`Searching for: ${searchTerm}\n\nIn a real implementation, this would show search results for "${searchTerm}"`);
-                }
-            });
-            
-            // Course guidelines modal
-            const modal = document.getElementById('course-modal');
-            const modalTitle = document.getElementById('modal-title');
-            const modalBody = document.getElementById('modal-body');
-            const closeBtn = document.querySelector('.close-btn');
-            const courseBtns = document.querySelectorAll('.course-btn');
-            
-            const courseGuidelines = {
-                blogging: {
-                    title: 'Complete Blogging Course - Guidelines',
-                    content: `
-                        <div class="guidelines">
-                            <h3>Course Overview</h3>
-                            <p>This comprehensive blogging course by Muhammad Talha will teach you everything you need to know to create a successful blog from scratch.</p>
-                            
-                            <h3>What You'll Learn</h3>
-                            <ul>
-                                <li>How to choose a profitable niche for your blog</li>
-                                <li>Setting up your blog with WordPress</li>
-                                <li>Creating content that attracts readers</li>
-                                <li>Optimizing your blog for search engines (SEO)</li>
-                                <li>Monetization strategies (AdSense, affiliate marketing, etc.)</li>
-                                <li>Building an email list</li>
-                                <li>Social media promotion techniques</li>
-                            </ul>
-                            
-                            <h3>Course Requirements</h3>
-                            <ul>
-                                <li>Basic computer skills</li>
-                                <li>Internet access</li>
-                                <li>Willingness to learn and implement</li>
-                            </ul>
-                            
-                            <h3>Duration</h3>
-                            <p>8 weeks (2 lessons per week)</p>
-                            
-                            <h3>Certification</h3>
-                            <p>Upon completion, you'll receive a certificate from Muhammad Talha's Blog Academy.</p>
-                        </div>
-                    `
-                },
-                affiliate: {
-                    title: 'Affiliate Marketing Mastery - Guidelines',
-                    content: `
-                        <div class="guidelines">
-                            <h3>Course Overview</h3>
-                            <p>Master the art of affiliate marketing with this comprehensive course by Muhammad Talha. Learn how to earn passive income by promoting other people's products.</p>
-                            
-                            <h3>What You'll Learn</h3>
-                            <ul>
-                                <li>Understanding affiliate marketing basics</li>
-                                <li>Choosing the right affiliate programs</li>
-                                <li>Creating content that converts</li>
-                                <li>Building an audience that trusts you</li>
-                                <li>Advanced strategies for increasing conversions</li>
-                                <li>Tracking and analyzing your results</li>
-                                <li>Scaling your affiliate income</li>
-                            </ul>
-                            
-                            <h3>Course Requirements</h3>
-                            <ul>
-                                <li>Basic understanding of blogging</li>
-                                <li>Internet access</li>
-                                <li>Willingness to implement strategies</li>
-                            </ul>
-                            
-                            <h3>Duration</h3>
-                            <p>6 weeks (2 lessons per week)</p>
-                            
-                            <h3>Certification</h3>
-                            <p>Upon completion, you'll receive a certificate from Muhammad Talha's Affiliate Marketing Academy.</p>
-                        </div>
-                    `
-                },
-                seo: {
-                    title: 'SEO Optimization - Guidelines',
-                    content: `
-                        <div class="guidelines">
-                            <h3>Course Overview</h3>
-                            <p>Learn advanced SEO techniques to rank your website on Google with this comprehensive course by Muhammad Talha. Drive organic traffic to your site.</p>
-                            
-                            <h3>What You'll Learn</h3>
-                            <ul>
-                                <li>Understanding search engine algorithms</li>
-                                <li>Keyword research and analysis</li>
-                                <li>On-page optimization techniques</li>
-                                <li>Technical SEO (site speed, mobile optimization, etc.)</li>
-                                <li>Link building strategies</li>
-                                <li>Content optimization for SEO</li>
-                                <li>Local SEO optimization</li>
-                                <li>Analytics and tracking</li>
-                            </ul>
-                            
-                            <h3>Course Requirements</h3>
-                            <ul>
-                                <li>Basic understanding of websites</li>
-                                <li>Internet access</li>
-                                <li>Willingness to implement technical changes</li>
-                            </ul>
-                            
-                            <h3>Duration</h3>
-                            <p>10 weeks (2 lessons per week)</p>
-                            
-                            <h3>Certification</h3>
-                            <p>Upon completion, you'll receive a certificate from Muhammad Talha's SEO Academy.</p>
-                        </div>
-                    `
-                }
-            };
-            
-            courseBtns.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    const course = this.getAttribute('data-course');
-                    const guidelines = courseGuidelines[course];
+            if (searchTerm) {
+                // Filter courses based on search term
+                const courseCards = document.querySelectorAll('.course-card');
+                let found = false;
+                
+                courseCards.forEach(card => {
+                    const title = card.getAttribute('data-title').toLowerCase();
+                    const description = card.querySelector('.course-description').textContent.toLowerCase();
                     
-                    modalTitle.textContent = guidelines.title;
-                    modalBody.innerHTML = guidelines.content;
-                    modal.classList.add('active');
-                });
-            });
-            
-            closeBtn.addEventListener('click', function() {
-                modal.classList.remove('active');
-            });
-            
-            window.addEventListener('click', function(e) {
-                if (e.target === modal) {
-                    modal.classList.remove('active');
-                }
-            });
-            
-            // Newsletter form submission
-            const newsletterForms = document.querySelectorAll('.newsletter-form');
-            newsletterForms.forEach(form => {
-                form.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    const input = this.querySelector('input');
-                    if(input.value) {
-                        alert('Thank you for subscribing to Muhammad Talha\'s newsletter with: ' + input.value);
-                        input.value = '';
+                    if (title.includes(searchTerm) || description.includes(searchTerm)) {
+                        card.style.display = 'block';
+                        found = true;
+                    } else {
+                        card.style.display = 'none';
                     }
                 });
-            });
-            
-            // Read more links
-            const readMoreLinks = document.querySelectorAll('.read-more');
-            readMoreLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    alert('This would navigate to the full blog post in a real implementation');
-                });
-            });
-            
-            // Blog post hover effect
-            const blogPosts = document.querySelectorAll('.blog-post');
-            blogPosts.forEach(post => {
-                post.addEventListener('mouseenter', function() {
-                    this.style.cursor = 'pointer';
-                });
                 
-                post.addEventListener('click', function() {
-                    alert('This would open the full blog post in a real implementation');
-                });
+                // Show a message if no courses match the search
+                if (!found) {
+                    const coursesSection = document.getElementById('courses');
+                    const noResults = document.createElement('div');
+                    noResults.className = 'no-results';
+                    noResults.textContent = 'No courses found matching your search.';
+                    noResults.style.textAlign = 'center';
+                    noResults.style.padding = '20px';
+                    noResults.style.fontSize = '18px';
+                    noResults.style.color = '#666';
+                    
+                    // Remove any existing no-results message
+                    const existingNoResults = coursesSection.querySelector('.no-results');
+                    if (existingNoResults) {
+                        existingNoResults.remove();
+                    }
+                    
+                    coursesSection.appendChild(noResults);
+                } else {
+                    // Remove any existing no-results message
+                    const existingNoResults = document.getElementById('courses').querySelector('.no-results');
+                    if (existingNoResults) {
+                        existingNoResults.remove();
+                    }
+                }
+                
+                // Scroll to courses section
+                document.getElementById('courses').scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    navLinks.classList.remove('active');
+                }
             });
+        });
+        
+        // Course modal functionality
+        const courseModal = document.getElementById('courseModal');
+        const modalClose = document.querySelector('.close');
+        const modalImage = document.getElementById('modalImage');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalDescription = document.getElementById('modalDescription');
+        const modalLearnList = document.getElementById('modalLearnList');
+        const modalRequirementsList = document.getElementById('modalRequirementsList');
+        const modalEnrollBtn = document.getElementById('modalEnrollBtn');
+        let currentCourse = '';
+        
+        // Add click event to course cards
+        document.querySelectorAll('.course-card').forEach(card => {
+            card.addEventListener('click', function(e) {
+                // If the click is on the enroll button, don't open the modal
+                if (e.target.classList.contains('enroll-btn')) {
+                    return;
+                }
+                
+                const courseName = this.getAttribute('data-title');
+                openCourseModal(courseName);
+            });
+        });
+        
+        // Add click event to enroll buttons
+        document.querySelectorAll('.enroll-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation(); // Prevent the card click event
+                const courseName = this.getAttribute('data-course');
+                openCourseModal(courseName);
+            });
+        });
+        
+        function openCourseModal(courseName) {
+            currentCourse = courseName;
+            const course = courseData[courseName];
+            
+            modalImage.src = course.image;
+            modalTitle.textContent = courseName;
+            modalDescription.textContent = course.description;
+            
+            // Populate learn list
+            modalLearnList.innerHTML = '';
+            course.learn.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = item;
+                modalLearnList.appendChild(li);
+            });
+            
+            // Populate requirements list
+            modalRequirementsList.innerHTML = '';
+            course.requirements.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = item;
+                modalRequirementsList.appendChild(li);
+            });
+            
+            courseModal.style.display = 'block';
+        }
+        
+        // Close modal when clicking on X
+        modalClose.addEventListener('click', function() {
+            courseModal.style.display = 'none';
+        });
+        
+        // Close modal when clicking outside of it
+        window.addEventListener('click', function(event) {
+            if (event.target == courseModal) {
+                courseModal.style.display = 'none';
+            }
+        });
+        
+        // Payment modal functionality
+        const paymentModal = document.getElementById('paymentModal');
+        const paymentCourseName = document.getElementById('paymentCourseName');
+        const paymentMethods = document.querySelectorAll('.payment-method');
+        const bankDetails = document.getElementById('bankDetails');
+        const easypaisaDetails = document.getElementById('easypaisaDetails');
+        const jazzcashDetails = document.getElementById('jazzcashDetails');
+        const payoneerDetails = document.getElementById('payoneerDetails');
+        const payBtn = document.getElementById('payBtn');
+        const successMessage = document.getElementById('successMessage');
+        const closeSuccess = document.getElementById('closeSuccess');
+        const ceoNotification = document.getElementById('ceoNotification');
+        const closeNotification = document.getElementById('closeNotification');
+        const otpContainer = document.getElementById('otpContainer');
+        const verifyOtpBtn = document.getElementById('verifyOtpBtn');
+        const otpInputs = document.querySelectorAll('.otp-input');
+        let generatedOTP = '';
+        
+        // Open payment modal when clicking enroll button in course modal
+        modalEnrollBtn.addEventListener('click', function() {
+            courseModal.style.display = 'none';
+            paymentCourseName.textContent = currentCourse;
+            paymentModal.style.display = 'block';
+        });
+        
+        // Payment method selection
+        paymentMethods.forEach(method => {
+            method.addEventListener('click', function() {
+                // Remove selected class from all methods
+                paymentMethods.forEach(m => m.classList.remove('selected'));
+                
+                // Add selected class to clicked method
+                this.classList.add('selected');
+                
+                // Hide all payment details
+                bankDetails.style.display = 'none';
+                easypaisaDetails.style.display = 'none';
+                jazzcashDetails.style.display = 'none';
+                payoneerDetails.style.display = 'none';
+                
+                // Show selected payment details
+                const methodType = this.getAttribute('data-method');
+                if (methodType === 'bank') {
+                    bankDetails.style.display = 'block';
+                } else if (methodType === 'easypaisa') {
+                    easypaisaDetails.style.display = 'block';
+                } else if (methodType === 'jazzcash') {
+                    jazzcashDetails.style.display = 'block';
+                } else if (methodType === 'payoneer') {
+                    payoneerDetails.style.display = 'block';
+                }
+            });
+        });
+        
+        // Pay button click
+        payBtn.addEventListener('click', function() {
+            // Validate form
+            const clientName = document.getElementById('clientName').value;
+            const clientPhone = document.getElementById('clientPhone').value;
+            const clientEmail = document.getElementById('clientEmail').value;
+            
+            if (!clientName || !clientPhone || !clientEmail) {
+                alert('Please fill in all required fields');
+                return;
+            }
+            
+            // Generate OTP
+            generatedOTP = Math.floor(1000 + Math.random() * 9000).toString();
+            console.log('Generated OTP:', generatedOTP); // In a real app, this would be sent to the user's phone
+            
+            // Show OTP container
+            otpContainer.style.display = 'block';
+            
+            // Focus on first OTP input
+            otpInputs[0].focus();
+            
+            // Disable pay button
+            payBtn.disabled = true;
+            payBtn.textContent = 'Verify Code';
+        });
+        
+        // OTP input handling
+        otpInputs.forEach((input, index) => {
+            input.addEventListener('input', function() {
+                if (this.value.length === 1 && index < otpInputs.length - 1) {
+                    otpInputs[index + 1].focus();
+                }
+                
+                // Check if all OTP fields are filled
+                const allFilled = Array.from(otpInputs).every(input => input.value.length === 1);
+                if (allFilled) {
+                    verifyOtpBtn.disabled = false;
+                }
+            });
+            
+            input.addEventListener('keydown', function(e) {
+                if (e.key === 'Backspace' && this.value.length === 0 && index > 0) {
+                    otpInputs[index - 1].focus();
+                }
+            });
+        });
+        
+        // Verify OTP button click
+        verifyOtpBtn.addEventListener('click', function() {
+            // Get entered OTP
+            const enteredOTP = Array.from(otpInputs).map(input => input.value).join('');
+            
+            // Verify OTP
+            if (enteredOTP === generatedOTP) {
+                // Get client information
+                const clientName = document.getElementById('clientName').value;
+                const clientPhone = document.getElementById('clientPhone').value;
+                const clientEmail = document.getElementById('clientEmail').value;
+                
+                // Close payment modal
+                paymentModal.style.display = 'none';
+                
+                // Show success message
+                successMessage.style.display = 'block';
+                
+                // Show CEO notification
+                document.getElementById('notificationClientName').textContent = 'Client: ' + clientName;
+                document.getElementById('notificationCourse').textContent = 'Course: ' + currentCourse;
+                ceoNotification.style.display = 'block';
+                
+                // Reset form
+                document.getElementById('clientName').value = '';
+                document.getElementById('clientPhone').value = '';
+                document.getElementById('clientEmail').value = '';
+                otpInputs.forEach(input => input.value = '');
+                otpContainer.style.display = 'none';
+                payBtn.disabled = false;
+                payBtn.textContent = 'Pay $100';
+                verifyOtpBtn.disabled = true;
+                
+                // In a real app, this is where you would send the data to a server
+                console.log('Enrollment details:', {
+                    course: currentCourse,
+                    clientName,
+                    clientPhone,
+                    clientEmail,
+                    amount: '$100'
+                });
+            } else {
+                alert('Invalid OTP. Please try again.');
+                
+                // Clear OTP inputs
+                otpInputs.forEach(input => input.value = '');
+                otpInputs[0].focus();
+            }
+        });
+        
+        // Contact form submission
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // In a real app, this would be sent to a server
+            console.log('Contact form submission:', {
+                name,
+                email,
+                subject,
+                message
+            });
+            
+            // Show success message
+            alert('Thank you for your message! We will get back to you soon.');
+            
+            // Reset form
+            contactForm.reset();
+        });
+        
+        // Close success message
+        closeSuccess.addEventListener('click', function() {
+            successMessage.style.display = 'none';
+        });
+        
+        // Close CEO notification
+        closeNotification.addEventListener('click', function() {
+            ceoNotification.style.display = 'none';
+        });
+        
+        // Close payment modal when clicking outside of it
+        window.addEventListener('click', function(event) {
+            if (event.target == paymentModal) {
+                paymentModal.style.display = 'none';
+            }
         });
     </script>
 </body>
