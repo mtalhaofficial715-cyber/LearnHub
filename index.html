@@ -132,7 +132,7 @@
         
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%236c5ce7"/><text x="50" y="50" font-family="Arial" font-size="14" fill="white" text-anchor="middle" dominant-baseline="middle">Muhammad Talha</text></svg>');
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&auto=format&fit=crop&w=1770&q=80');
             background-size: cover;
             background-position: center;
             color: white;
@@ -170,6 +170,20 @@
             background-color: var(--secondary);
             transform: translateY(-3px);
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        /* Ad Banner */
+        .ad-banner {
+            background-color: #f0f0f0;
+            padding: 20px;
+            text-align: center;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        
+        .ad-banner p {
+            color: var(--gray);
+            font-size: 14px;
         }
         
         /* Search Section */
@@ -240,6 +254,13 @@
             border-bottom: 1px solid var(--light);
             cursor: pointer;
             transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+        
+        .suggestion-item i {
+            margin-right: 10px;
+            color: var(--primary);
         }
         
         .suggestion-item:hover {
@@ -304,15 +325,10 @@
             box-shadow: 0 15px 30px rgba(0,0,0,0.1);
         }
         
-        .blog-post .post-image {
+        .blog-post img {
             width: 100%;
             height: 200px;
-            background-color: var(--light);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 40px;
-            color: var(--primary);
+            object-fit: cover;
         }
         
         .blog-content {
@@ -386,14 +402,10 @@
             box-shadow: 0 15px 30px rgba(0,0,0,0.1);
         }
         
-        .course-image {
+        .course-card img {
+            width: 100%;
             height: 180px;
-            background-color: var(--light);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 60px;
-            color: var(--primary);
+            object-fit: cover;
         }
         
         .course-content {
@@ -760,6 +772,21 @@
         </div>
     </header>
 
+    <!-- Ad Banner -->
+    <div class="ad-banner">
+        <p>Advertisement - <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+        <!-- Header Ad -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+             data-ad-slot="XXXXXXXXXX"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script></p>
+    </div>
+
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
@@ -776,11 +803,11 @@
                 <input type="text" class="search-input" placeholder="Search for articles, courses, topics...">
                 <button class="search-btn"><i class="fas fa-search"></i></button>
                 <div class="search-suggestions">
-                    <div class="suggestion-item">Blogging Tips for Beginners</div>
-                    <div class="suggestion-item">How to Earn Money Online</div>
-                    <div class="suggestion-item">Google AdSense Guide</div>
-                    <div class="suggestion-item">Affiliate Marketing Strategies</div>
-                    <div class="suggestion-item">SEO Optimization Techniques</div>
+                    <div class="suggestion-item"><i class="fas fa-search"></i> Blogging Tips for Beginners</div>
+                    <div class="suggestion-item"><i class="fas fa-search"></i> How to Earn Money Online</div>
+                    <div class="suggestion-item"><i class="fas fa-search"></i> Google AdSense Guide</div>
+                    <div class="suggestion-item"><i class="fas fa-search"></i> Affiliate Marketing Strategies</div>
+                    <div class="suggestion-item"><i class="fas fa-search"></i> SEO Optimization Techniques</div>
                 </div>
             </div>
         </div>
@@ -795,9 +822,7 @@
             <div class="courses">
                 <!-- Course 1 -->
                 <div class="course-card">
-                    <div class="course-image">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Complete Blogging Course">
                     <div class="course-content">
                         <h3 class="course-title">Complete Blogging Course</h3>
                         <p class="course-description">Learn how to create a successful blog from scratch and monetize it effectively.</p>
@@ -807,9 +832,7 @@
                 
                 <!-- Course 2 -->
                 <div class="course-card">
-                    <div class="course-image">
-                        <i class="fas fa-dollar-sign"></i>
-                    </div>
+                    <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Affiliate Marketing Mastery">
                     <div class="course-content">
                         <h3 class="course-title">Affiliate Marketing Mastery</h3>
                         <p class="course-description">Master the art of affiliate marketing and start earning passive income.</p>
@@ -819,9 +842,7 @@
                 
                 <!-- Course 3 -->
                 <div class="course-card">
-                    <div class="course-image">
-                        <i class="fas fa-search-dollar"></i>
-                    </div>
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="SEO Optimization">
                     <div class="course-content">
                         <h3 class="course-title">SEO Optimization</h3>
                         <p class="course-description">Learn advanced SEO techniques to rank your website on Google.</p>
@@ -831,6 +852,21 @@
             </div>
         </div>
     </section>
+
+    <!-- In-content Ad -->
+    <div class="ad-banner">
+        <p>Advertisement - <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+        <!-- In-content Ad -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+             data-ad-slot="XXXXXXXXXX"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script></p>
+    </div>
 
     <!-- Blog Section -->
     <section class="blog-section" id="blog">
@@ -842,9 +878,7 @@
                 <div class="blog-posts">
                     <!-- Blog Post 1 -->
                     <article class="blog-post">
-                        <div class="post-image">
-                            <i class="fas fa-money-bill-wave"></i>
-                        </div>
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="10 Proven Ways to Monetize Your Blog">
                         <div class="blog-content">
                             <div class="blog-meta">
                                 <span><i class="far fa-calendar"></i> May 15, 2023</span>
@@ -862,9 +896,7 @@
                     
                     <!-- Blog Post 2 -->
                     <article class="blog-post">
-                        <div class="post-image">
-                            <i class="fas fa-search"></i>
-                        </div>
+                        <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="The Ultimate Guide to SEO">
                         <div class="blog-content">
                             <div class="blog-meta">
                                 <span><i class="far fa-calendar"></i> May 12, 2023</span>
@@ -882,9 +914,7 @@
                     
                     <!-- Blog Post 3 -->
                     <article class="blog-post">
-                        <div class="post-image">
-                            <i class="fas fa-envelope"></i>
-                        </div>
+                        <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="How to Build an Email List">
                         <div class="blog-content">
                             <div class="blog-meta">
                                 <span><i class="far fa-calendar"></i> May 10, 2023</span>
@@ -902,9 +932,7 @@
                     
                     <!-- Blog Post 4 -->
                     <article class="blog-post">
-                        <div class="post-image">
-                            <i class="fas fa-share-alt"></i>
-                        </div>
+                        <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7237a0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Content Creation Strategies">
                         <div class="blog-content">
                             <div class="blog-meta">
                                 <span><i class="far fa-calendar"></i> May 8, 2023</span>
@@ -928,6 +956,24 @@
                         <h3>About Muhammad Talha</h3>
                         <p>Professional blogger and digital marketing expert with over 5 years of experience in helping people earn money online.</p>
                         <a href="#" class="btn">Read More</a>
+                    </div>
+                    
+                    <!-- Sidebar Ad -->
+                    <div class="sidebar-widget">
+                        <h3>Advertisement</h3>
+                        <div style="background-color: #f0f0f0; height: 250px; display: flex; align-items: center; justify-content: center; border-radius: 5px;">
+                            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+                            <!-- Sidebar Ad -->
+                            <ins class="adsbygoogle"
+                                 style="display:block"
+                                 data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                                 data-ad-slot="XXXXXXXXXX"
+                                 data-ad-format="auto"
+                                 data-full-width-responsive="true"></ins>
+                            <script>
+                                 (adsbygoogle = window.adsbygoogle || []).push({});
+                            </script>
+                        </div>
                     </div>
                     
                     <!-- Categories Widget -->
@@ -962,14 +1008,6 @@
                         <div class="newsletter-form">
                             <input type="email" placeholder="Your email...">
                             <button><i class="fas fa-paper-plane"></i></button>
-                        </div>
-                    </div>
-                    
-                    <!-- Ads Widget -->
-                    <div class="sidebar-widget">
-                        <h3>Advertisement</h3>
-                        <div style="background-color: #f0f0f0; height: 250px; display: flex; align-items: center; justify-content: center; border-radius: 5px;">
-                            <p>Ad Space (300x250)</p>
                         </div>
                     </div>
                 </aside>
@@ -1017,15 +1055,15 @@
                 <div class="footer-widget">
                     <h3>Contact Muhammad Talha</h3>
                     <ul class="footer-links">
-                        <li><i class="fas fa-map-marker-alt"></i> Karachi, Pakistan</li>
+                        <li><i class="fas fa-map-marker-alt"></i> RYK, Pakistan</li>
                         <li><i class="fas fa-phone"></i> +92 313 6590350</li>
-                        <li><i class="fas fa-envelope"></i> muhammadtalha@example.com</li>
+                        <li><i class="fas fa-envelope"></i> mtalhaofficial715@gmail.com</li>
                     </ul>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2023 Muhammad Talha Blog. All Rights Reserved.</p>
+                <p>&copy; 2025 Muhammad Talha Blog. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
@@ -1047,8 +1085,8 @@
     <div class="contact-info" id="contact-details">
         <h3>Contact Muhammad Talha</h3>
         <p><i class="fas fa-phone"></i> +92 313 6590350</p>
-        <p><i class="fas fa-envelope"></i> muhammadtalha@example.com</p>
-        <p><i class="fas fa-map-marker-alt"></i> Karachi, Pakistan</p>
+        <p><i class="fas fa-envelope"></i> mtalhaofficial715@gmail.com</p>
+        <p><i class="fas fa-map-marker-alt"></i> Rahim Yar Khan, Pakistan</p>
     </div>
 
     <script>
@@ -1252,483 +1290,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                      
-
-                                      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
